@@ -44,10 +44,10 @@ public class CountDownAdapter extends RecyclerView.Adapter {
                     public void run() {
                         for (int i = 0; i < mTimeDownBeanList.size(); i++) {
                             long useTime = mTimeDownBeanList.get(i).getUseTime();
-                            if (useTime > 0) {
+                            if (useTime > 1000) {
                                 useTime -= 1000;
                                 mTimeDownBeanList.get(i).setUseTime(useTime);
-                                if (useTime <= 0 && mTimeDownBeanList.get(i).isTimeFlag()) {
+                                if (useTime <= 1000 && mTimeDownBeanList.get(i).isTimeFlag()) {
                                     mTimeDownBeanList.get(i).setTimeFlag(false);
                                     CountDownAdapter.this.notifyItemChanged(i);
                                 }else {
